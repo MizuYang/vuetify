@@ -19,8 +19,8 @@
 import { reactive } from 'vue'
 import { storeToRefs } from 'pinia'
 import { usePagesStore } from '@/stores/userStore.js'
-import C1 from '@/components/demo1/C1.vue'
-import C2 from '@/components/demo1/C2.vue'
+import A1 from '@/components/demo1/A1.vue'
+import A2 from '@/components/demo1/A2.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -29,11 +29,11 @@ const { pageInfo } = storeToRefs(usePagesStore())
 const data = reactive([
   {
     description: 'v-click-outside 可得知用戶點擊元素外圍',
-    component: C1
+    component: A1
   },
   {
     description: '',
-    component: C2
+    component: A2
   }
 ])
 

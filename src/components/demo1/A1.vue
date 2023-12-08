@@ -1,6 +1,11 @@
 <template>
+  <v-switch v-model="clickOutsideEnabled"
+            :label="`點擊外部 ${clickOutsideEnabled ? '啟用' : '禁用'}`"></v-switch>
   <v-card
-    v-click-outside="onClickOutside"
+    v-click-outside="{
+      handler: onClickOutside,
+      closeConditional: onCloseConditional
+    }"
     :color="active ? 'primary' : undefined"
     :dark="active"
     class="mx-auto"
@@ -21,9 +26,13 @@ import { ref } from 'vue'
 
 // data
 const active = ref(false)
+const clickOutsideEnabled = ref(true) // 判斷是否禁用點擊外部
 
 const onClickOutside = () => {
   active.value = false
   console.log('點擊元素外圍')
+}
+const onCloseConditional = (e) => {
+  return clickOutsideEnabled.value
 }
 </script>
