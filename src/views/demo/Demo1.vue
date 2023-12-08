@@ -32,7 +32,7 @@ const data = reactive([
     component: A1
   },
   {
-    description: '',
+    description: 'v-intersect 判斷元素是否進入可視畫面中',
     component: A2
   }
 ])
