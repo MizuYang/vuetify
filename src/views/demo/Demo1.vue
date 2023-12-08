@@ -22,6 +22,7 @@ import { usePagesStore } from '@/stores/userStore.js'
 import A1 from '@/components/demo1/A1.vue'
 import A2 from '@/components/demo1/A2.vue'
 import A3 from '@/components/demo1/A3.vue'
+import A4 from '@/components/demo1/A4.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -39,6 +40,10 @@ const data = reactive([
   {
     description: 'v-resize 監聽畫面比例是否有被縮放',
     component: A3
+  },
+  {
+    description: 'v-ripple 讓元素點擊有波紋效果',
+    component: A4
   }
 ])
 
