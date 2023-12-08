@@ -21,6 +21,7 @@ import { storeToRefs } from 'pinia'
 import { usePagesStore } from '@/stores/userStore.js'
 import A1 from '@/components/demo1/A1.vue'
 import A2 from '@/components/demo1/A2.vue'
+import A3 from '@/components/demo1/A3.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -34,6 +35,10 @@ const data = reactive([
   {
     description: 'v-intersect 判斷元素是否進入可視畫面中',
     component: A2
+  },
+  {
+    description: 'v-resize 監聽畫面比例是否有被縮放',
+    component: A3
   }
 ])
 
