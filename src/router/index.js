@@ -7,7 +7,17 @@ const routes = [
     meta: {
       title: '首頁'
     },
-    component: () => import('@/views/HomeView.vue')
+    component: () => import('@/views/HomeView.vue'),
+    children: [
+      {
+        path: 'demo1',
+        name: 'demo1',
+        meta: {
+          title: '功能嘗試'
+        },
+        component: () => import('@/views/demo/Demo1.vue')
+      }
+    ]
   }
 ]
 
