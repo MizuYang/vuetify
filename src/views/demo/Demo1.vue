@@ -1,8 +1,13 @@
 <template>
-  hi
+  {{ pageInfo }}
 </template>
 
 <script setup>
+import { storeToRefs } from 'pinia'
+import { usePagesStore } from '@/stores/userStore.js'
+
+// store
+const { pageInfo } = storeToRefs(usePagesStore())
 
 </script>
 

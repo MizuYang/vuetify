@@ -8,6 +8,7 @@
         v-for="item in tabs"
         :key="item.fileName"
         :value="item"
+        @click="item.clickMethod(item)"
       >
         {{ item.tabName }}
       </v-tab>
@@ -36,19 +37,32 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue' // eslint-disable-line
+import { useRoute } from 'vue-router'
+import { usePagesStore } from '@/stores/userStore.js'
+
+// store
+const { getPageInfo } = usePagesStore()
+
+// router
+const route = useRoute()
 
 // data
 const tabs = ref({
   demo1: {
     fileName: 'demo1',
     tabName: '功能嘗試',
-    description: '玩玩可能會用到的功能'
+    description: '玩玩可能會用到的功能',
+    clickMethod (item) {
+      console.log('切換分頁:', item)
+      getPageInfo(item)
+    }
   }
 })
 const curTab = ref(null)
 
 onMounted(() => {
-  console.log(curTab.value)
+  const pageInfo = tabs.value[route.name]
+  getPageInfo(pageInfo)
 })
 </script>
 

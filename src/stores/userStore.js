@@ -1,29 +1,17 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import axios from 'axios'
 
-export const useUserInfoStore = defineStore('userInfoStore', () => {
+export const usePagesStore = defineStore('userInfoStore', () => {
   // data
-  const userInfo = ref({})
+  const pageInfo = ref({})
 
-  async function getUserInfo () {
-    const config = {
-      msthod: 'get',
-      url: 'https://randomuser.me/api/',
-      data: {}
-    }
-    try {
-      const res = await axios(config)
-      userInfo.value = res.data.results[0]
-
-      console.log(userInfo.value)
-    } catch (err) {
-      console.error(err)
-    }
+  function getPageInfo (info) {
+    console.log(info)
+    pageInfo.value = info
   }
 
   return {
-    userInfo,
-    getUserInfo
+    pageInfo,
+    getPageInfo
   }
 })
