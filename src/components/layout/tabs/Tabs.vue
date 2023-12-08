@@ -37,7 +37,7 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue' // eslint-disable-line
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { usePagesStore } from '@/stores/userStore.js'
 
 // store
@@ -45,6 +45,7 @@ const { getPageInfo } = usePagesStore()
 
 // router
 const route = useRoute()
+const router = useRouter()
 
 // data
 const tabs = ref({
@@ -61,8 +62,10 @@ const tabs = ref({
 const curTab = ref(null)
 
 onMounted(() => {
-  const pageInfo = tabs.value[route.name]
+  const page = route.name === 'home' ? 'demo1' : route.name // 預設demo1
+  const pageInfo = tabs.value[page]
   getPageInfo(pageInfo)
+  router.push(page)
 })
 </script>
 
