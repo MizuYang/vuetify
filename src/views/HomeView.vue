@@ -3,15 +3,13 @@
   <Tabs />
 
   <!-- 頁面元件 -->
-  <RouterView />
-  <!-- <component :is="curComponent"></component> -->
+  <div class="container mt-10 mb-15">
+    <RouterView />
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue' // eslint-disable-line
 import Tabs from '@/components/layout/tabs/Tabs.vue'
-
-// const curComponent = ref()
 </script>
 
 <style lang='scss' scope></style>

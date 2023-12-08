@@ -1,13 +1,41 @@
 <template>
-  {{ pageInfo }}
+  <h1 class="text-20 fw-bold-7">{{ pageInfo.tabName }}</h1>
+  <p>{{  pageInfo.description }}</p>
+
+  <!-- demo元件 -->
+  <template v-for="(item, idx) in data" :key="`${item.tabName}-${idx}`">
+    <!-- 描述 -->
+    <div class="bg-gainsboro my-2 p-5">
+      <h3 class="text-18 mb-5">
+        {{ idx+1 }}. {{ item.description }}
+      </h3>
+      <component :is="item.component"
+                 :item="item"></component>
+    </div>
+  </template>
 </template>
 
 <script setup>
+import { reactive } from 'vue'
 import { storeToRefs } from 'pinia'
 import { usePagesStore } from '@/stores/userStore.js'
+import C1 from '@/components/demo1/C1.vue'
+import C2 from '@/components/demo1/C2.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
+
+// data
+const data = reactive([
+  {
+    description: 'v-click-outside 可得知用戶點擊元素外圍',
+    component: C1
+  },
+  {
+    description: '',
+    component: C2
+  }
+])
 
 </script>
 

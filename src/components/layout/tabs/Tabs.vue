@@ -50,7 +50,7 @@ const route = useRoute()
 const tabs = ref({
   demo1: {
     fileName: 'demo1',
-    tabName: '功能嘗試',
+    tabName: '指令',
     description: '玩玩可能會用到的功能',
     clickMethod (item) {
       console.log('切換分頁:', item)
