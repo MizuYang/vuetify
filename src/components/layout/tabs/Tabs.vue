@@ -41,6 +41,12 @@ const tabs = ref({
     tabName: '顏色',
     description: '顏色設定、客製化',
     clickMethod
+  },
+  demo3: {
+    fileName: 'demo3',
+    tabName: '過度動畫',
+    description: 'Transitions 動畫效果',
+    clickMethod
   }
 })
 const curTab = ref(null)

@@ -24,6 +24,14 @@ const routes = [
           title: '顏色'
         },
         component: () => import('@/views/demo/Demo2.vue')
+      },
+      {
+        path: 'demo3',
+        name: 'demo3',
+        meta: {
+          title: 'Transitions 動畫效果'
+        },
+        component: () => import('@/views/demo/Demo3.vue')
       }
     ]
   }
