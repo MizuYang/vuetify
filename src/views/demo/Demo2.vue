@@ -20,6 +20,7 @@ import { reactive } from 'vue'
 import { storeToRefs } from 'pinia'
 import { usePagesStore } from '@/stores/pagesStore.js'
 import B1 from '@/components/demo2/B1.vue'
+import B2 from '@/components/demo2/B2.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -29,6 +30,10 @@ const data = reactive([
   {
     description: '簡單使用 Vuetify 顏色',
     component: B1
+  },
+  {
+    description: '渲染 Vuetify 顏色',
+    component: B2
   }
 ])
 
