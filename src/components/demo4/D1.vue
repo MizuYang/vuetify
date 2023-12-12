@@ -1,4 +1,18 @@
 <template>
+  <div class="mb-15">
+    <template v-for="(value,keyName) in setup" :key="value.enName">
+      <div class='form-check d-flex align-items-center'>
+        <input class='form-check-input'
+               type='checkbox'
+               :id='value.enName'
+               v-model="setup[keyName].value">
+        <label class='form-check-label ms-3'
+               :for='value.enName'>
+          {{ value.cnName }}
+        </label>
+      </div>
+    </template>
+  </div>
 
   <v-autocomplete
     label="Autocomplete"
@@ -65,6 +79,23 @@ const items = ref([
   '小明志',
   '小小琪'
 ])
+const setup = ref({
+  clearable: {
+    enName: 'clearable',
+    cnName: '顯示清除按鈕',
+    value: false
+  },
+  chips: {
+    enName: 'chips',
+    cnName: '讓選項加上 tag 樣式',
+    value: false
+  },
+  multiple: {
+    enName: 'multiple',
+    cnName: '可多選',
+    value: false
+  }
+})
 
 </script>
 
