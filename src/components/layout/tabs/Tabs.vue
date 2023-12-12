@@ -47,6 +47,12 @@ const tabs = ref({
     tabName: '過度動畫',
     description: 'Transitions 動畫效果',
     clickMethod
+  },
+  demo4: {
+    fileName: 'demo4',
+    tabName: '表單',
+    description: '表單常見的元件',
+    clickMethod
   }
 })
 const curTab = ref(null)
