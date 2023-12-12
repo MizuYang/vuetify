@@ -18,7 +18,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { storeToRefs } from 'pinia'
-import { usePagesStore } from '@/stores/userStore.js'
+import { usePagesStore } from '@/stores/pagesStore.js'
 import A1 from '@/components/demo1/A1.vue'
 import A2 from '@/components/demo1/A2.vue'
 import A3 from '@/components/demo1/A3.vue'
