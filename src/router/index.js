@@ -16,6 +16,14 @@ const routes = [
           title: '功能嘗試'
         },
         component: () => import('@/views/demo/Demo1.vue')
+      },
+      {
+        path: 'demo2',
+        name: 'demo2',
+        meta: {
+          title: '顏色'
+        },
+        component: () => import('@/views/demo/Demo2.vue')
       }
     ]
   }
