@@ -23,6 +23,7 @@ import A1 from '@/components/demo1/A1.vue'
 import A2 from '@/components/demo1/A2.vue'
 import A3 from '@/components/demo1/A3.vue'
 import A4 from '@/components/demo1/A4.vue'
+import A5 from '@/components/demo1/A5.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -44,6 +45,10 @@ const data = reactive([
   {
     description: 'v-ripple 讓元素點擊有波紋效果',
     component: A4
+  },
+  {
+    description: 'v-scroll 元素滾動時回傳該元素的滾動資訊',
+    component: A5
   }
 ])
 
