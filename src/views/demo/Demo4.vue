@@ -20,6 +20,7 @@ import { reactive } from 'vue'
 import { storeToRefs } from 'pinia'
 import { usePagesStore } from '@/stores/pagesStore.js'
 import D1 from '@/components/demo4/D1.vue'
+import D2 from '@/components/demo4/D2.vue'
 import D3 from '@/components/demo4/D3.vue'
 
 // store
@@ -30,6 +31,10 @@ const data = reactive([
   {
     description: '自動補全',
     component: D1
+  },
+  {
+    description: '常見表單元素',
+    component: D2
   },
   {
     description: '表單自動儲存案例',
