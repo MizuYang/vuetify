@@ -32,6 +32,25 @@
       </v-checkbox>
     </div>
 
+    <!-- radio -->
+    <div class="row row-cols-2">
+      <v-radio-group v-model="radios"
+                     :inline="direction==='inline'"
+                     :column="direction==='column'">
+        <v-radio label="選項一" value="1"></v-radio>
+        <v-radio label="選項二" value="2"></v-radio>
+        <v-radio label="選項三" value="3"></v-radio>
+      </v-radio-group>
+
+      <!-- 配置 -->
+      <div>
+        <v-radio-group v-model="direction" inline>
+          <v-radio label="inline" value="inline"></v-radio>
+          <v-radio label="column" value="column"></v-radio>
+        </v-radio-group>
+      </div>
+    </div>
+
     <!-- combobox 下拉、輸入框 -->
     <div class="d-flex align-items-center">
       <div class="w-50 me-10">
@@ -55,6 +74,7 @@
         </template>
       </div>
     </div>
+
   </section>
 </template>
 
@@ -68,6 +88,9 @@ const comboboxOptions = ref({
   chips: '',
   multiple: ''
 })
+const radios = ref('')
+const direction = ref('inline') // inline, column
+
 </script>
 
 <style lang='scss' scope>
