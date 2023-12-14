@@ -31,6 +31,30 @@
         </template>
       </v-checkbox>
     </div>
+
+    <!-- combobox 下拉、輸入框 -->
+    <div class="d-flex align-items-center">
+      <div class="w-50 me-10">
+        <v-combobox
+          label="Combobox"
+          :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+          :clearable="comboboxOptions.clearable===true"
+          :chips="comboboxOptions.chips===true"
+          :multiple="comboboxOptions.multiple===true"
+        ></v-combobox>
+      </div>
+
+      <!-- 配置 -->
+      <div class="d-flex align-items-center pb-5">
+        <template v-for="(value,item) in comboboxOptions" :key="item">
+          <v-checkbox
+            v-model="comboboxOptions[item]"
+            :label="item"
+            hide-details
+          ></v-checkbox>
+        </template>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -39,6 +63,11 @@ import { ref } from 'vue'
 
 // data
 const checkbox = ref('')
+const comboboxOptions = ref({
+  clearable: '',
+  chips: '',
+  multiple: ''
+})
 </script>
 
 <style lang='scss' scope>
