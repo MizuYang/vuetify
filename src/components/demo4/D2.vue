@@ -128,11 +128,18 @@
       </div>
     </div>
 
+    <!-- otp-input -->
+    <div>
+      <v-otp-input v-model="otpInputValue"
+                   :loading="isOtpinputLoading"
+                   placeholder="0"></v-otp-input>
+    </div>
+
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 // data
 const checkbox = ref('')
@@ -150,11 +157,31 @@ const selectOptions = ref({
 const textFieldOptions = ref({
   clearable: false
 })
+const otpInputValue = ref('')
+const isOtpinputLoading = ref(false)
+
+// watch
+watch(() => otpInputValue.value, (n) => {
+  console.log('otpInputValue', otpInputValue.value)
+  if (n.length >= 6) otpInit()
+})
+
+function otpInit () {
+  isOtpinputLoading.value = true
+
+  setTimeout(() => {
+    isOtpinputLoading.value = false
+    otpInputValue.value = ''
+  }, 1500)
+}
 
 </script>
 
 <style lang='scss' scope>
 .v-checkbox .v-selection-control {
   min-height: 0;
+}
+.v-otp-input {
+  justify-content: left;
 }
 </style>
