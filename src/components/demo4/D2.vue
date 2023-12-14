@@ -60,7 +60,7 @@
     <!-- input-text -->
     <div class="row row-cols-2">
       <div style="width:525px;">
-        <v-text-field label="Label"
+        <v-text-field label="input-text"
                       hint="請輸入文字(hint:聚焦時在輸入下方顯示提示文字)"
                       prefix="$" suffix="元"
                       :clearable="textFieldOptions.clearable"></v-text-field>
@@ -73,6 +73,13 @@
                       :value="true"
                       v-model="textFieldOptions[key]"></v-checkbox>
         </div>
+      </div>
+    </div>
+
+    <!-- textarea -->
+    <div>
+      <div style="width:500px;">
+        <v-textarea clearable counter label="textarea"></v-textarea>
       </div>
     </div>
 
