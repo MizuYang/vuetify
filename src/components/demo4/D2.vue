@@ -135,7 +135,51 @@
                    placeholder="0"></v-otp-input>
     </div>
 
+    <!-- file-input -->
+    <div class="d-flex align-items-center">
+      <div class="me-10" style="width:500px;">
+        <v-file-input
+          :show-size="inputFileOptions.showSize===true"
+          :counter="inputFileOptions.counter===true"
+          :chips="inputFileOptions.chips===true"
+          :prepend-icon="prependIcon"
+          multiple
+          label="File input"
+        ></v-file-input>
+      </div>
+
+      <!-- 配置 -->
+      <div class="d-flex align-items-center pb-5">
+        <template v-for="(value,item) in inputFileOptions" :key="item">
+          <v-checkbox
+            v-model="inputFileOptions[item]"
+            :label="item"
+            hide-details
+          ></v-checkbox>
+        </template>
+
+        <!-- 更換 icon -->
+        <v-select
+          class="ms-10"
+          v-model="prependIcon"
+          :items="inputFileIcons"
+          color="blue-grey-lighten-2"
+          label="選擇 icon"
+          style="width: 200px;"
+        >
+          <template v-slot:item="{ props, item }">
+            <v-list-item
+              v-bind="props"
+              :prepend-icon="item.value"
+              :title="item?.title"
+              :subtitle="item?.raw?.group"
+            ></v-list-item>
+          </template>
+        </v-select>
+      </div>
+    </div>
   </section>
+
 </template>
 
 <script setup>
@@ -157,15 +201,14 @@ const selectOptions = ref({
 const textFieldOptions = ref({
   clearable: false
 })
+
+// otp
 const otpInputValue = ref('')
 const isOtpinputLoading = ref(false)
-
-// watch
 watch(() => otpInputValue.value, (n) => {
   console.log('otpInputValue', otpInputValue.value)
   if (n.length >= 6) otpInit()
 })
-
 function otpInit () {
   isOtpinputLoading.value = true
 
@@ -174,6 +217,53 @@ function otpInit () {
     otpInputValue.value = ''
   }, 1500)
 }
+
+// input-file
+const inputFileOptions = ref({
+  showSize: '',
+  counter: '',
+  chips: ''
+})
+const prependIcon = ref('mdi-paperclip')
+const inputFileIcons = ref([
+  'mdi-calendar',
+  'mdi-close-circle',
+  'mdi-minus-box',
+  'mdi-checkbox-blank-outline',
+  'mdi-checkbox-marked',
+  'mdi-close-circle',
+  'mdi-close',
+  'mdi-chevron-up',
+  'mdi-check',
+  'mdi-close-circle',
+  'mdi-circle',
+  'mdi-menu-down',
+  'mdi-pencil',
+  'mdi-close-circle',
+  'mdi-chevron-down',
+  'mdi-eyedropper',
+  'mdi-paperclip',
+  'mdi-page-first',
+  'mdi-information',
+  'mdi-page-last',
+  'mdi-cached',
+  'mdi-menu',
+  'mdi-minus',
+  'mdi-chevron-right',
+  'mdi-plus',
+  'mdi-chevron-left',
+  'mdi-radiobox-blank',
+  'mdi-radiobox-marked',
+  'mdi-star-outline',
+  'mdi-star',
+  'mdi-star-half-full',
+  'mdi-arrow-up',
+  'mdi-arrow-down',
+  'mdi-menu-down',
+  'mdi-check-circle',
+  'mdi-unfold-more-horizontal',
+  'mdi-alert-circle'
+])
 
 </script>
 
