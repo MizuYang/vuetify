@@ -22,6 +22,7 @@ import { usePagesStore } from '@/stores/pagesStore.js'
 import D1 from '@/components/demo4/D1.vue'
 import D2 from '@/components/demo4/D2.vue'
 import D3 from '@/components/demo4/D3.vue'
+import D4 from '@/components/demo4/D4.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -39,6 +40,10 @@ const data = reactive([
   {
     description: '表單自動儲存案例',
     component: D3
+  },
+  {
+    description: '表單驗證',
+    component: D4
   }
 ])
 
