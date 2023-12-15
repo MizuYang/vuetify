@@ -79,7 +79,11 @@
     <!-- textarea -->
     <div>
       <div style="width:500px;">
-        <v-textarea clearable counter label="textarea"></v-textarea>
+        <v-textarea clearable
+                    counter
+                    no-resize
+                    maxlength="120"
+                    label="textarea"></v-textarea>
       </div>
     </div>
 
