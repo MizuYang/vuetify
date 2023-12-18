@@ -1,6 +1,6 @@
 <template>
   <v-data-table :headers="headers" :items="desserts" item-value="name">
-    <template #item="{ item }">
+    <!-- <template #item="{ item }">
       <tr>
         <td>{{ item.name }}</td>
         <td>{{ item.calories }}</td>
@@ -9,6 +9,11 @@
         <td>{{ item.protein }}</td>
         <td>{{ item.iron }}</td>
       </tr>
+    </template> -->
+
+    <!-- 僅設定 fat 這個 key 名稱的欄位 -->
+    <template #item.fat="{ value }">
+        <span class="text-light bg-dark p-3">{{ value }}</span>
     </template>
   </v-data-table>
 </template>

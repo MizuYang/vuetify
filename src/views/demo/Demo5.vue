@@ -33,11 +33,11 @@ const data = reactive([
     component: E1
   },
   {
-    description: 'v-slot:headers',
+    description: '#headers',
     component: E2
   },
   {
-    description: 'v-slot:item',
+    description: '#item、#item.keyName',
     component: E3
   }
 ])
