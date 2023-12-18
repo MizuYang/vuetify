@@ -22,6 +22,8 @@ import { usePagesStore } from '@/stores/pagesStore.js'
 import E1 from '@/components/demo5/E1.vue'
 import E2 from '@/components/demo5/E2.vue'
 import E3 from '@/components/demo5/E3.vue'
+import E4 from '@/components/demo5/E4.vue'
+import E5 from '@/components/demo5/E5.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -39,6 +41,14 @@ const data = reactive([
   {
     description: '#item、#item.keyName',
     component: E3
+  },
+  {
+    description: 'group-by、group-header',
+    component: E4
+  },
+  {
+    description: '#loading、v-skeleton-loader',
+    component: E5
   }
 ])
 
