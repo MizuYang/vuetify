@@ -53,6 +53,12 @@ const tabs = ref({
     tabName: '表單',
     description: '表單常見的元件',
     clickMethod
+  },
+  demo5: {
+    fileName: 'demo5',
+    tabName: '表格',
+    description: '實用表格功能(含排序、搜尋、分頁、取得遠端表格資料..等)',
+    clickMethod
   }
 })
 const curTab = ref(null)

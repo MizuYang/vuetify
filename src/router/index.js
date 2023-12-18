@@ -40,6 +40,14 @@ const routes = [
           title: '表單'
         },
         component: () => import('@/views/demo/Demo4.vue')
+      },
+      {
+        path: 'demo5',
+        name: 'demo5',
+        meta: {
+          title: '表格'
+        },
+        component: () => import('@/views/demo/Demo5.vue')
       }
     ]
   }
