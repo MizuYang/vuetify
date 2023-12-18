@@ -25,6 +25,7 @@ import E3 from '@/components/demo5/E3.vue'
 import E4 from '@/components/demo5/E4.vue'
 import E5 from '@/components/demo5/E5.vue'
 import E6 from '@/components/demo5/E6.vue'
+import E7 from '@/components/demo5/E7.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -54,6 +55,10 @@ const data = reactive([
   {
     description: '可滾動卷軸的表格',
     component: E6
+  },
+  {
+    description: 'API 取得遠端表格資料',
+    component: E7
   }
 ])
 
