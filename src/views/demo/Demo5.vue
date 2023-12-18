@@ -20,6 +20,7 @@ import { reactive } from 'vue'
 import { storeToRefs } from 'pinia'
 import { usePagesStore } from '@/stores/pagesStore.js'
 import E1 from '@/components/demo5/E1.vue'
+import E2 from '@/components/demo5/E2.vue'
 
 // store
 const { pageInfo } = storeToRefs(usePagesStore())
@@ -29,6 +30,10 @@ const data = reactive([
   {
     description: '基本使用',
     component: E1
+  },
+  {
+    description: 'v-slot:headers',
+    component: E2
   }
 ])
 
